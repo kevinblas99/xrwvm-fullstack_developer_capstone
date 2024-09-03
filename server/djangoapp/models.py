@@ -30,9 +30,13 @@ class CarModel(models.Model):
         ('CONVERTIBLE', 'Convertible'),
     ]
     CAR_COLORS = [
-        ('BLACK','WHITE','GRAY','RED','BLUE')
+        ('BLACK','Black'),
+        ('WHITE', 'White'),
+        ('GRAY','Gray'),
+        ('RED','Red'),
+        ('BLUE','Blue'),
     ]
-    car_type = models.CharField(max_length=30, choices=CAR_TYPES, default='SEDAN')
+    type = models.CharField(max_length=30, choices=CAR_TYPES, default='SEDAN')
     car_color = models.CharField(max_length=10, choices=CAR_COLORS, default="BLACK")
     year = models.IntegerField(default=2024,
         validators=[
@@ -43,6 +47,3 @@ class CarModel(models.Model):
     def __str__(self):
         return self.name
 
-
-admin.site.register(CarMake)
-admin.site.register(CarModel)
