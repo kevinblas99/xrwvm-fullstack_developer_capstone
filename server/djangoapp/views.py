@@ -64,7 +64,7 @@ def registration(request):
     else:
         data = {"userName": username, "error": "Already Registered"}
         return JsonResponse(data)
-    
+
 
 def get_cars(request):
     count = CarMake.objects.count()
@@ -93,7 +93,7 @@ def get_dealer_reviews(request, dealer_id):
         return JsonResponse({"status": 200, "reviews": reviews})
     else:
         return JsonResponse({"status": 400, "message": "Bad Request"})
-    
+
 
 def get_dealer_details(request, dealer_id):
     if dealer_id:
@@ -102,7 +102,7 @@ def get_dealer_details(request, dealer_id):
         return JsonResponse({"status": 200, "dealer": dealership})
     else:
         return JsonResponse({"status": 400, "message": "Bad Request"})
-    
+
 
 def add_review(request):
     if not request.user.is_anonymous:
