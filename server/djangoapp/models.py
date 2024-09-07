@@ -1,6 +1,6 @@
 from django.db import models
-#from django.utils.timezone import now
 from django.core.validators import MaxValueValidator, MinValueValidator
+# from django.utils.timezone import now
 
 
 # Create your models here.
@@ -11,7 +11,7 @@ class CarMake(models.Model):
 
     def __str__(self):
         return self.name
-    
+
 
 class CarModel(models.Model):
     car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
@@ -42,11 +42,9 @@ class CarModel(models.Model):
                                  choices=CAR_COLORS,
                                  default="BLACK")
     year = models.IntegerField(default=2024,
-        validators=[
-            MaxValueValidator(2024),
-            MinValueValidator(2016)
-        ])
+                               validators=[
+                                MaxValueValidator(2024),
+                                MinValueValidator(2016)])
 
     def __str__(self):
         return self.name
-    
