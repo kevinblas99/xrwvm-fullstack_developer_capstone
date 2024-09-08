@@ -1,4 +1,4 @@
-/* jshint esversion: 6 */ // Add this comment to set ES6 for JSHint
+/* jshint esversion: 6, 8 */ // Add this comment to set ES6 for JSHint
 
 const express = require('express');
 const mongoose = require('mongoose');
