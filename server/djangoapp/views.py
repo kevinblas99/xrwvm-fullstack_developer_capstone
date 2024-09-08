@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect, get_object_or_404
+# from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse, HttpResponseRedirect, HttpResponse
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
-from django.contrib import messages
+# from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
-from datetime import datetime
+# from datetime import datetime
 from .models import CarMake, CarModel
 from .populate import initiate
 from .restapis import get_request, analyze_review_sentiments, post_review
@@ -112,6 +112,7 @@ def add_review(request):
             return JsonResponse({"status": 200})
         except Exception as e:
             logger.error(f"Error posting review: {e}")
-            return JsonResponse({"status": 401, "message": "Error in posting review"})
+            return JsonResponse({"status": 401,
+                                 "message": "Error in posting review"})
     else:
         return JsonResponse({"status": 403, "message": "Unauthorized"})
