@@ -40,6 +40,7 @@ CSRF_TRUSTED_ORIGINS = [
     'cognitiveclass.ai',
     'https://kevinrblas-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.'
     'proxy.cognitiveclass.ai',
+    'https://kevinrblas-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
 ]
 
 REST_FRAMEWORK = {
@@ -64,7 +65,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.middleware.messages.middleware.MessageMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 

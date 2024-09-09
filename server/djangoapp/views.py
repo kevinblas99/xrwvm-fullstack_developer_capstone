@@ -1,11 +1,11 @@
-# from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
-# from django.http import  HttpResponseRedirect, HttpResponse
+from django.http import  HttpResponseRedirect, HttpResponse
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
-# from django.contrib import messages
+from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
-# from datetime import datetime
+from datetime import datetime
 from .models import CarMake, CarModel
 from .populate import initiate
 from .restapis import get_request, analyze_review_sentiments, post_review
