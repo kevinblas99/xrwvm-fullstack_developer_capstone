@@ -74,21 +74,77 @@ img{
   margin-top:3%
 }
 
-.navitems{
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-  flex: 1;
-  justify-content: flex-start;
-  justify-self: center;
+
+/* Navbar Styling */
+.navbar {
+  background-color: #f8f9fa;
+  height: 4rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.nav_item{
-  margin-left:15px;
-  font-size: 20px;
-  color: black;
-  align-self: center;
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #343a40;
 }
+
+.nav-link {
+  font-size: 1.2rem;
+  color: #343a40 !important;
+}
+
+.navbar-toggler {
+  border-color: rgba(52, 58, 64, 0.5);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23343a40' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.btn-outline-dark {
+  color: #343a40;
+  border-color: #343a40;
+}
+
+.btn-outline-dark:hover {
+  background-color: #343a40;
+  color: white;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .navbar-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%; /* Full width for nav items in mobile view */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .navbar-text {
+    text-align: left;
+    margin-top: 10px;
+  }
+}
+
 
 .username{
   font: 30px sans-serif;
