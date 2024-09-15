@@ -8,7 +8,25 @@ load_dotenv()
 backend_url = os.getenv('backend_url', default="http://localhost:3030")
 sentiment_analyzer_url = os.getenv('sentiment_analyzer_url',
                                    default="http://localhost:5050/")
+searchcars_url = os.getenv(
+    'searchcars_url',
+    default="http://localhost:3050/")
 
+
+def searchcars_request(endpoint, **kwargs):
+    params=""
+    if kwargs:
+        for key, value in kwargs.items():
+            params += f"{key}={value}&"
+
+    request_url = f"{searchcars_url}{endpoint}?{params}"
+    print(f"GET from {request_url}")
+    try:
+        response = requests.get(request_url)
+        return response.json()
+    except Exception as e:
+        print("Search cars exception occurred")
+        
 
 def get_request(endpoint, **kwargs):
     params = ""
