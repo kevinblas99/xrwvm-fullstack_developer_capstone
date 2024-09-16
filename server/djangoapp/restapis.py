@@ -14,18 +14,23 @@ searchcars_url = os.getenv(
 
 
 def searchcars_request(endpoint, **kwargs):
-    params=""
-    if kwargs:
+    params = ""
+    if (kwargs):
         for key, value in kwargs.items():
-            params += f"{key}={value}&"
+            params = params+key + "=" + value + "&"
 
-    request_url = f"{searchcars_url}{endpoint}?{params}"
-    print(f"GET from {request_url}")
+    request_url = searchcars_url+endpoint+"?"+params
+
+    print("GET from {} ".format(request_url))
     try:
+        # Call get method of requests library with URL and parameters
         response = requests.get(request_url)
         return response.json()
-    except Exception as e:
-        print("Search cars exception occurred")
+    except:
+        # If any error occurs
+        print("Network exception occurred")
+    finally:
+        print("GET request call complete!")
         
 
 def get_request(endpoint, **kwargs):

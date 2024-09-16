@@ -11,12 +11,13 @@ services:
     volumes:
       - mongo_data:/data/db
 
-      
+  # Node api service
   api:
     image: nodeapp
     ports:
       - 3050:3050
     depends_on: 
       - mongo_db
+
 volumes:
   mongo_data: {}
